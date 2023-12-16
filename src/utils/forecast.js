@@ -9,9 +9,11 @@ const forecast = (latitude,longitude,callback)=>{
         }else{
             const abstemp = body.current.temperature;
             const res = (abstemp- 32) * 5 / 9
+            const res1 =Math.round(res * 10) / 10; // Round to one decimal place
 
 
-            callback(undefined,body.current.weather_descriptions[0]+'. It is currently ' + res + ' degrees out. There is a '+body.current.precip+'% chance of rain.')
+
+            callback(undefined,body.current.weather_descriptions[0]+'. It is currently ' + res1 + ' degrees out. There is a '+body.current.precip+'% chance of rain.')
         }
     })
 }
