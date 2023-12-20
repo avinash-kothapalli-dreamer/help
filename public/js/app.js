@@ -34,14 +34,14 @@ weatherform.addEventListener('submit',(e)=>{
             msg1.textContent=data.error
         }
         else{
-            msg1.textContent= 'location :'+ data.location
-            msg2.textContent= 'temperature :'+data.temperature
-            msg3.textContent= 'weather_condition:' + data.condition
-            msg4.textContent = 'windspeed:'+data.windspeed
-            msg5.textContent = 'wind_direction:'+data.wind_dir
-            msg6.textContent = 'pressure:'+data.pressure
-            msg7.textContent = 'precipitation:'+data.precipitation
-            msg8.textContent = 'humidity:'+data.humidity
+            msg1.textContent= "Location:" + data.location
+            msg2.textContent= 'Temperature :'+data.temperature
+            msg3.textContent= 'Weather_condition:' + data.condition
+            msg4.textContent = 'Windspeed:'+data.windspeed
+            msg5.textContent = 'Wind_direction:'+data.wind_dir
+            msg6.textContent = 'Pressure:'+data.pressure
+            msg7.textContent = 'Precipitation:'+data.precipitation
+            msg8.textContent = 'Humidity:'+data.humidity
             msg9.textContent = 'Feelsliketemp:'+data.feelslike_c
             
         }
