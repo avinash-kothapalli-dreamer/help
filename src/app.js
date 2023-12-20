@@ -45,12 +45,33 @@ app.get('/weather',(req,res)=>{
     }
     geocode(req.query.address,(error,{latitude,longitude,location}={})=>{
         if(error) return res.send({error})
-        forecast(latitude,longitude,(error,forecastdata)=>{
+        forecast(latitude,longitude,(error,temperature,condition,windspeed,wind_dir,pressure,precipitation,humidity,feelslike_c)=>{
+             console.log('forecast')
+             //console.log(forecastdata)
+             console.log('temp',temperature)
+             console.log('cond',condition)
+             console.log('ws',windspeed)
+             console.log('wind_dir',wind_dir)
+             console.log('pressure',pressure)
+             console.log('precip',precipitation)
+             console.log('humidity',humidity)
+             console.log('feelsliketemp',feelslike_c)
             if(error) return res.send({error})
             else{
                 res.send({
-                    location,
-                    forecast:forecastdata,
+                    location: location,
+                    temperature:temperature,
+                    condition:condition,
+                   windspeed: windspeed,
+                    wind_dir:wind_dir,
+                    pressure:pressure,
+                    precipitation:precipitation,
+                    humidity:humidity,
+                    feelslike_c:feelslike_c,
+
+                    //temperarure_in_celsius:forecastdata.current.temp_c,
+                    
+                    //forecast:forecastdata,
                     address:req.query.address
                 })
             }
